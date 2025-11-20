@@ -1,6 +1,7 @@
 import { Button } from "@/components/ui/button";
 import { Layers, ChevronDown } from "lucide-react";
 import { useState } from "react";
+import NDSLogo from "@/assets/NDS-Logo.png";
 
 const Navigation = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -13,22 +14,17 @@ const Navigation = () => {
   ];
 
   return (
-    <div className="w-full absolute top-0 left-0 bg-dark-bg px-4 sm:px-6 pt-4 sm:pt-6">
+    <div className="w-full absolute -top-6 left-0 px-4 sm:px-6 pt-4 sm:pt-6 z-10">
       {/* Top Navigation Bar */}
       <div className="flex items-center justify-between px-6 sm:px-8 py-4">
         {/* Logo */}
         <div className="flex items-center gap-2">
-          <div className="w-6 h-6 bg-cream-bg rounded flex items-center justify-center">
-            <span className="text-dark-bg font-bold text-sm">D</span>
-          </div>
-          <span className="text-cream-bg font-bold text-lg tracking-wide">
-            DESIGNHUB
-          </span>
+          <img src={NDSLogo} alt="NDS Logo" className="h-14" />
         </div>
 
         {/* Desktop Navigation */}
-        <div className="hidden md:flex items-center gap-6">
-          <div className="flex items-center gap-1 bg-cream-bg px-6 py-2.5 rounded-full">
+        <div className="hidden md:flex items-center gap-24">
+          <div className="flex items-center gap-1 px-6 py-2.5 rounded-full">
             {navLinks.map((link) => (
               <a
                 key={link.name}
