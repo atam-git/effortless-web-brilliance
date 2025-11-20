@@ -13,7 +13,7 @@ const Navigation = () => {
   ];
 
   return (
-    <div className="w-full px-4 sm:px-6 pt-4 sm:pt-6">
+    <div className="w-full absolute top-0 left-0 bg-dark-bg px-4 sm:px-6 pt-4 sm:pt-6">
       {/* Top Navigation Bar */}
       <div className="flex items-center justify-between px-6 sm:px-8 py-4">
         {/* Logo */}
@@ -21,7 +21,9 @@ const Navigation = () => {
           <div className="w-6 h-6 bg-cream-bg rounded flex items-center justify-center">
             <span className="text-dark-bg font-bold text-sm">D</span>
           </div>
-          <span className="text-cream-bg font-bold text-lg tracking-wide">DESIGNHUB</span>
+          <span className="text-cream-bg font-bold text-lg tracking-wide">
+            DESIGNHUB
+          </span>
         </div>
 
         {/* Desktop Navigation */}
@@ -52,7 +54,12 @@ const Navigation = () => {
           onClick={() => setIsMenuOpen(!isMenuOpen)}
         >
           <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
-            <path d="M3 12h18M3 6h18M3 18h18" stroke="currentColor" strokeWidth="2" strokeLinecap="round"/>
+            <path
+              d="M3 12h18M3 6h18M3 18h18"
+              stroke="currentColor"
+              strokeWidth="2"
+              strokeLinecap="round"
+            />
           </svg>
         </button>
       </div>
@@ -70,7 +77,11 @@ const Navigation = () => {
               {link.name}
             </a>
           ))}
-          <Button variant="hero" size="default" className="w-full mt-4 rounded-full">
+          <Button
+            variant="hero"
+            size="default"
+            className="w-full mt-4 rounded-full"
+          >
             Let's Connect
           </Button>
         </div>
