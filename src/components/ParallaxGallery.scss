@@ -1,0 +1,319 @@
+/* vars */
+$measure: 0.5rem;
+$line-height: 1.875;
+$viewport-type: max-width;
+$tabletl: 1300px;
+$tabletm: 1024px;
+$tablets: 810px;
+$mobile: 580px;
+$headerDesktop: 65px;
+$headerMobile: 88px;
+$type-a: "Clash Display", sans-serif;
+$time-a: 0.3s;
+$border-radius-a: 8px;
+$ease-standard-b: cubic-bezier(0, 0, 0.3, 1);
+
+/* Colors */
+$color-a: #0a0a0a;
+$color-b: #fff;
+$color-c: #fcec4f;
+$color-d: #ed7167;
+$color-e: #cfff00;
+$color-f: #f78566;
+$color-g: #f39507;
+$color-h: #e3bd74;
+
+$color-options: (
+  a: $color-a,
+  b: $color-b,
+  c: $color-c,
+  d: $color-d,
+  e: $color-e,
+  f: $color-f,
+  g: $color-g,
+  h: $color-h,
+);
+
+$colorbg-options: (
+  a: $color-a,
+);
+
+// mixins
+@mixin make-font-b($weight: 600) {
+  text-transform: uppercase;
+  font-family: $type-a;
+  font-weight: $weight;
+  letter-spacing: 0.02em;
+  line-height: 100%;
+  font-size: 6rem;
+  @media all and ($viewport-type: $mobile) {
+    line-height: 110%;
+    font-size: 2.5rem;
+  }
+}
+
+@mixin make-font-e($weight: 600) {
+  text-transform: uppercase;
+  font-family: $type-a;
+  font-weight: $weight;
+  letter-spacing: 0.02em;
+  line-height: 1.38rem;
+  font-size: 1.125rem;
+  @media all and ($viewport-type: $mobile) {
+    line-height: 1.25rem;
+    font-size: 1rem;
+  }
+}
+
+// reset
+body {
+  background-color: $color-a;
+  font-family: $type-a;
+  font-weight: 200;
+  line-height: $line-height;
+  color: map-get($color-options, b);
+  overflow-x: hidden;
+  margin: 0;
+}
+
+// grid
+.f--container {
+  margin: 0 auto;
+  padding-right: 1em;
+  padding-left: 1em;
+  width: 90%;
+}
+
+.f--row {
+  -webkit-box-flex: 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex: 0 1 auto;
+  flex: 0 1 auto;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+  margin-left: -1rem;
+  margin-right: -1rem;
+}
+
+.f--col-12 {
+  flex: 0 0 100%;
+  max-width: 100%;
+  min-height: 1px;
+  padding-left: 1rem;
+  padding-right: 1rem;
+  position: relative;
+  -webkit-transition: 0.3s;
+  transition: 0.3s;
+}
+
+// header
+.b--header-a {
+  position: fixed;
+  padding: $measure * 6 0;
+  left: 0;
+  width: 100%;
+  background-color: transparent;
+  z-index: 900;
+  @media all and ($viewport-type: $mobile) {
+    padding: $measure * 3 0;
+  }
+  &__wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    &__title {
+      @include make-font-e(500);
+      margin: 0 auto;
+      @media all and ($viewport-type: $mobile) {
+        max-width: 40%;
+        margin: 0;
+      }
+    }
+  }
+}
+
+// burger
+.b--burger-a {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  z-index: 999;
+  transition: all 0.8s cubic-bezier(0.47, 1.64, 0.41, 0.8);
+  &__dash {
+    display: block;
+    width: $measure * 6;
+    height: 6px;
+    background-color: map-get($color-options, b);
+    transform-origin: center;
+    transition: all 0.8s cubic-bezier(0.47, 1.64, 0.41, 0.8);
+    pointer-events: none;
+    border-radius: 1px;
+    &:not(:nth-child(2)) {
+      transform: scaleX(0.66);
+    }
+    &:not(:last-child) {
+      margin-bottom: $measure;
+    }
+  }
+  &:hover & {
+    &__dash {
+      transform: scaleX(0.66);
+      &:not(:nth-child(2)) {
+        transform: scaleX(1);
+      }
+    }
+  }
+  &--is-active {
+    transform: rotateZ(90deg);
+  }
+}
+
+// hero section
+.b--hero-a {
+  position: relative;
+  display: flex;
+  align-items: center;
+  height: calc(100vh - 130px);
+  scrollbar-width: none;
+  &:before {
+    content: "";
+    width: 40vw;
+    height: 100%;
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    // background: linear-gradient(90deg, #0A0A0A 0%, rgba(10, 10, 10, 0.73) 60.2%, rgba(10, 10, 10, 0) 100%);
+    z-index: 900;
+    pointer-events: none;
+    @media all and ($viewport-type: $mobile) {
+      top: $headerMobile;
+      height: calc(100vh - #{$headerMobile});
+    }
+  }
+  @media all and ($viewport-type: $mobile) {
+    height: calc(100vh - #{$headerMobile});
+  }
+  &__title {
+    position: fixed;
+    top: 50%;
+    left: 5%;
+    max-width: 60vw;
+    width: 100%;
+    z-index: 999;
+    transform: translateY(-50%);
+    pointer-events: none;
+    @include make-font-b();
+    color: map-get($color-options, b);
+    @media all and ($viewport-type: $mobile) {
+      top: 15%;
+      left: calc(5% + 0.25em);
+      padding-top: 0;
+      transform: none;
+      max-width: 80vw;
+    }
+  }
+  &__wrapper {
+    position: relative;
+    padding-top: $headerDesktop;
+    padding-left: calc(50vw - 200px);
+    padding-right: calc(50vw - 40px);
+    display: flex;
+    align-items: center;
+    height: 100%;
+    &::-webkit-scrollbar {
+      display: none;
+    }
+    @media all and ($viewport-type: $mobile) {
+      padding-top: $headerMobile;
+      padding-left: 20vw;
+      padding-right: 40vw;
+      align-items: flex-end;
+    }
+    &__content {
+      padding-right: $measure * 4;
+      &:last-child {
+        padding-right: 0;
+      }
+    }
+  }
+}
+
+// cards
+.b--card-b {
+  position: relative;
+  display: block;
+  aspect-ratio: 416 / 544;
+  height: 55vh;
+  max-width: 27.5vw;
+  width: 100%;
+  background-color: map-get($colorbg-options, a);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  border-radius: $border-radius-a;
+  &:before {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    background: map-get($color-options, a);
+    opacity: 0.3;
+    transition: $time-a $ease-standard-b;
+  }
+  @media all and ($viewport-type: $tabletl) {
+    max-width: 45.5vw;
+  }
+  @media all and ($viewport-type: $tabletm) {
+    max-width: 30.5vw;
+  }
+  @media all and ($viewport-type: $tablets) {
+    max-width: 55vw;
+  }
+  @media all and ($viewport-type: $mobile) {
+    aspect-ratio: 295 / 386;
+    height: 58vh;
+  }
+  //iphone 11
+  @media all and ($viewport-type: $mobile) and (-webkit-device-pixel-ratio: 2) {
+    max-width: 80vw;
+  }
+  @media all and ($viewport-type: $mobile) and (-webkit-device-pixel-ratio: 3) {
+    max-width: 80vw;
+  }
+  &:hover {
+    &:before {
+      opacity: 0;
+    }
+  }
+}
+
+//progress bar
+.b--progress-a {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  margin-top: $measure * 3;
+  position: absolute;
+  bottom: 24px;
+  &__item {
+    max-width: 210px;
+    background: #2f2f2f;
+    height: 6px;
+    width: 100%;
+    border-radius: 2px;
+    &__artwork {
+      width: 0%;
+      height: 100%;
+      background: map-get($color-options, b);
+      border-radius: 2px;
+    }
+  }
+  @media all and ($viewport-type: $mobile) {
+    display: none;
+  }
+}
