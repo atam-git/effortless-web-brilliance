@@ -8,7 +8,7 @@ const HeroSection = () => {
   const [crazyMode, setCrazyMode] = useState(false);
 
   return (
-    <div className="w-full h-screen bg-dark-bg p-6">
+    <div className="w-full h-screen p-6">
       <Navigation />
       {/* Cross Shape*/}
       <svg width="0" height="0">
@@ -32,7 +32,7 @@ const HeroSection = () => {
       </svg>
       {/* Cross Shape Wrapper */}
       <div className="w-full h-full">
-        <div className="cross-clip bg-cream-bg w-full h-full flex items-end p-12">
+        <div className="cross-clip w-full h-full flex items-end p-12">
           {/* Main Content */}
           <div className="grid md:grid-cols-2 gap-8 lg:gap-12 items-center">
             {/* Left Content */}
