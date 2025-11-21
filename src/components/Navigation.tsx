@@ -1,30 +1,28 @@
 import { Button } from "@/components/ui/button";
 import { Layers, ChevronDown } from "lucide-react";
 import { useState } from "react";
-import NDSLogo from "@/assets/NDS-Logo.png";
+import NDSLogo from "@/assets/NDS-Logo2.png";
 
 const Navigation = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   const navLinks = [
     { name: "Services", href: "#services" },
-    { name: "Pricing", href: "#pricing" },
+    { name: "Portfolio", href: "#Portfolio" },
     { name: "About", href: "#about" },
     { name: "Contact us", href: "#contact" },
   ];
 
   return (
-    <div className="w-full absolute -top-6 left-0 px-4 sm:px-6 pt-4 sm:pt-6 z-10">
+    <div className="w-full absolute -top-8 left-0 sm:px-6 pt-4 sm:pt-6 z-10">
       {/* Top Navigation Bar */}
-      <div className="flex items-center justify-between px-6 sm:px-8 py-4">
+      <div className="flex items-center justify-between py-10 px-4">
         {/* Logo */}
-        <div className="flex items-center gap-2">
-          <img src={NDSLogo} alt="NDS Logo" className="h-14" />
-        </div>
-
-        {/* Desktop Navigation */}
-        <div className="hidden md:flex items-center gap-24">
-          <div className="flex items-center gap-1 px-6 py-2.5 rounded-full">
+        <div className="flex flex-row items-center gap-24">
+          <div className="flex items-center gap-2">
+            <img src={NDSLogo} alt="NDS Logo" className="h-12" />
+          </div>
+          <div className="flex items-center gap-1 px-6 py-2.5 rounded-full border">
             {navLinks.map((link) => (
               <a
                 key={link.name}
@@ -35,14 +33,10 @@ const Navigation = () => {
               </a>
             ))}
           </div>
-          <button className="flex items-center gap-2 text-cream-bg text-sm">
-            <span>English</span>
-            <ChevronDown size={16} />
-          </button>
-          <Button variant="hero" size="default" className="rounded-full">
-            Let's Connect
-          </Button>
         </div>
+        <Button className="border border-cream-bg  w-[76px] h-10">
+          Pricing
+        </Button>
 
         {/* Mobile Menu Button */}
         <button
