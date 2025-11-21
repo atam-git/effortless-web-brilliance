@@ -16,13 +16,13 @@ const Navigation = () => {
   return (
     <div className="w-full absolute -top-8 left-0 sm:px-6 pt-4 sm:pt-6 z-10">
       {/* Top Navigation Bar */}
-      <div className="flex items-center justify-between py-10 px-4">
+      <div className="flex items-center justify-between py-12 px-10">
         {/* Logo */}
-        <div className="flex flex-row items-center gap-24">
+        <div className="flex flex-row items-center gap-20">
           <div className="flex items-center gap-2">
-            <img src={NDSLogo} alt="NDS Logo" className="h-12" />
+            <img src={NDSLogo} alt="NDS Logo" className="w-44" />
           </div>
-          <div className="flex items-center gap-1 px-6 py-2.5 rounded-full border">
+          <div className="flex items-center justify-between gap-1 px-6 py-2.5 rounded-full border-2">
             {navLinks.map((link) => (
               <a
                 key={link.name}
