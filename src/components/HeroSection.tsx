@@ -36,7 +36,7 @@ const HeroSection = () => {
           {/* Main Content */}
           <div className="grid md:grid-cols-2 gap-8 lg:gap-12 items-center">
             {/* Left Content */}
-            <div className="space-y-6 lg:space-y-8">
+            <div className="space-y-6 lg:space-y-8 z-0">
               <div className="space-y-4">
                 <h1 className="text-4xl sm:text-5xl lg:text-6xl xl:text-7xl font-bold leading-[1.1] text-foreground">
                   <span className="inline-flex items-start gap-2 mb-2">
