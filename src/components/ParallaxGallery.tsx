@@ -3,6 +3,13 @@ import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import "./ParallaxGallery.scss";
 
+import image1 from "@/assets/Portfolio/NDS-Portfolio-01-01-Bravura.jpg";
+import image2 from "@/assets/Portfolio/NDS-Portfolio-01-02-Twinglo.jpg";
+import image3 from "@/assets/Portfolio/NDS-Portfolio-01-03-SME-Cafe.jpg";
+import image4 from "@/assets/Portfolio/NDS-Portfolio-01-04-Uju-Email.jpg";
+import image5 from "@/assets/Portfolio/NDS-Portfolio-01-05--Centre-for-Memories.jpg";
+import image6 from "@/assets/Portfolio/NDS-Portfolio-01-06-Zhymma.jpg";
+
 gsap.registerPlugin(ScrollTrigger);
 
 const ParallaxGallery: React.FC = () => {
@@ -28,7 +35,7 @@ const ParallaxGallery: React.FC = () => {
             trigger: container,
             invalidateOnRefresh: true,
             pin: pin,
-            scrub: 1,
+            scrub: 0.5,
             start: "top top",
             end: () => "+=" + container.offsetWidth,
           },
@@ -52,7 +59,7 @@ const ParallaxGallery: React.FC = () => {
           ease: "Power2.out",
           scrollTrigger: {
             trigger: container,
-            scrub: 1,
+            scrub: 0.5,
             start: "top top",
             end: () => "+=" + container.offsetWidth,
           },
@@ -69,6 +76,8 @@ const ParallaxGallery: React.FC = () => {
     }
   };
 
+  const images = [image1, image2, image3, image4, image5, image6];
+
   return (
     <div id="home" ref={pinRef}>
       <header className="b--header-a">
@@ -76,9 +85,7 @@ const ParallaxGallery: React.FC = () => {
           <div className="f--row">
             <div className="f--col-12">
               <div className="b--header-a__wrapper">
-                <p className="b--header-a__wrapper__title">
-                  Placeholder's Hall Of Fame
-                </p>
+                <p className="b--header-a__wrapper__title"></p>
                 <div className="b--burger-a">
                   <span className="b--burger-a__dash"></span>
                   <span className="b--burger-a__dash"></span>
@@ -90,86 +97,25 @@ const ParallaxGallery: React.FC = () => {
         </div>
       </header>
       <section className="b--hero-a">
-        <h2 className="b--hero-a__title js--hero-a-title">
-          Check out our selected works
-        </h2>
+        <h2 className="b--hero-a__title js--hero-a-title">Featured works</h2>
         <div
           className="b--hero-a__wrapper js--hero-a"
           ref={containerRef}
           data-horizontal-section
         >
-          <div className="b--hero-a__wrapper__content">
-            <a
-              ref={addToRefs}
-              className="b--card-b"
-              href="#"
-              style={{
-                backgroundImage:
-                  "url('https://images.unsplash.com/photo-1671561009644-3d2459190774?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MnwzMjM4NDZ8MHwxfHJhbmRvbXx8fHx8fHx8fDE2NzIxMzUxMTQ&ixlib=rb-4.0.3&q=80&w=400')",
-                backgroundPositionX: "50%",
-              }}
-            ></a>
-          </div>
-          <div className="b--hero-a__wrapper__content">
-            <a
-              ref={addToRefs}
-              className="b--card-b"
-              href="#"
-              style={{
-                backgroundImage:
-                  "url('https://images.unsplash.com/photo-1671394507023-76c50b824053?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MnwzMjM4NDZ8MHwxfHJhbmRvbXx8fHx8fHx8fDE2NzIxMzUxMTQ&ixlib=rb-4.0.3&q=80&w=400')",
-                backgroundPositionX: "50%",
-              }}
-            ></a>
-          </div>
-          <div className="b--hero-a__wrapper__content">
-            <a
-              ref={addToRefs}
-              className="b--card-b"
-              href="#"
-              style={{
-                backgroundImage:
-                  "url('https://images.unsplash.com/photo-1671036810802-379ec0c402d8?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MnwzMjM4NDZ8MHwxfHJhbmRvbXx8fHx8fHx8fDE2NzIxMzYyMjk&ixlib=rb-4.0.3&q=80&w=400')",
-                backgroundPositionX: "50%",
-              }}
-            ></a>
-          </div>
-          <div className="b--hero-a__wrapper__content">
-            <a
-              ref={addToRefs}
-              className="b--card-b"
-              href="#"
-              style={{
-                backgroundImage:
-                  "url('https://images.unsplash.com/photo-1671459618991-fd2f37781ef8?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MnwzMjM4NDZ8MHwxfHJhbmRvbXx8fHx8fHx8fDE2NzIxMzYyNTY&ixlib=rb-4.0.3&q=80&w=400')",
-                backgroundPositionX: "50%",
-              }}
-            ></a>
-          </div>
-          <div className="b--hero-a__wrapper__content">
-            <a
-              ref={addToRefs}
-              className="b--card-b"
-              href="#"
-              style={{
-                backgroundImage:
-                  "url('https://images.unsplash.com/photo-1670679897756-c086f8d26f36?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MnwzMjM4NDZ8MHwxfHJhbmRvbXx8fHx8fHx8fDE2NzIxMzYyNTY&ixlib=rb-4.0.3&q=80&w=400')",
-                backgroundPositionX: "50%",
-              }}
-            ></a>
-          </div>
-          <div className="b--hero-a__wrapper__content">
-            <a
-              ref={addToRefs}
-              className="b--card-b"
-              href="#"
-              style={{
-                backgroundImage:
-                  "url('https://images.unsplash.com/photo-1671124594962-3b8ab41e5b6f?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MnwzMjM4NDZ8MHwxfHJhbmRvbXx8fHx8fHx8fDE2NzIxMzYyNTY&ixlib=rb-4.0.3&q=80&w=400')",
-                backgroundPositionX: "50%",
-              }}
-            ></a>
-          </div>
+          {images.map((image, index) => (
+            <div className="b--hero-a__wrapper__content" key={index}>
+              <a
+                ref={addToRefs}
+                className="b--card-b"
+                href="#"
+                style={{
+                  backgroundImage: `url(${image})`,
+                  backgroundPositionX: "50%",
+                }}
+              ></a>
+            </div>
+          ))}
         </div>
       </section>
       <div className="b--progress-a">

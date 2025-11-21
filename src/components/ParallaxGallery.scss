@@ -206,7 +206,7 @@ body {
     transform: translateY(-50%);
     pointer-events: none;
     @include make-font-b();
-    color: map-get($color-options, b);
+    color: #f8f8f6;
     @media all and ($viewport-type: $mobile) {
       top: 15%;
       left: calc(5% + 0.25em);
