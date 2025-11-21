@@ -5,6 +5,7 @@ import {
   CarouselNext,
   CarouselPrevious,
 } from "@/components/ui/carousel";
+import Autoplay from "embla-carousel-autoplay";
 
 // Import all portfolio images
 import portfolio01 from "@/assets/Portfolio/NDS-Portfolio-01-01-Bravura.jpg";
@@ -131,6 +132,12 @@ const PortfolioGallery = () => {
             align: "start",
             loop: true,
           }}
+          plugins={[
+            Autoplay({
+              delay: 2000,
+              stopOnInteraction: false,
+            }),
+          ]}
           className="w-full"
         >
           <CarouselContent className="-ml-4">
